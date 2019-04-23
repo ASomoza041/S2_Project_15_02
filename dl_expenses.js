@@ -5,8 +5,8 @@
    Tutorial 13
    Case Problem 2
 
-   Author: 
-   Date:   
+   Author: Alex Somoza
+   Date: 4-22-19  
    
    Filename: dl_expenses.js
    
@@ -31,6 +31,14 @@
       
 */
 
+window.addEventListener("load", function () {
+      var changingCells = document.getElementsByClassName("sum");
+      for (var i = 0; i < changingCells.length; i++) {
+            changingCells[i].onchange = calcExp;
+      }
+      document.getElementById("submitButton").onclick = validateSummary;
+});
+
 
 
 
@@ -39,10 +47,15 @@
 
 
 function formatNumber(val, decimals) {
-   return val.toLocaleString(undefined, {minimumFractionDigits: decimals, 
-                                         maximumFractionDigits: decimals});
+      return val.toLocaleString(undefined, {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals
+      });
 }
 
 function formatUSCurrency(val) {
-   return val.toLocaleString('en-US', {style: "currency", currency: "USD"} );
+      return val.toLocaleString('en-US', {
+            style: "currency",
+            currency: "USD"
+      });
 }
