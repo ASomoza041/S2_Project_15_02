@@ -30,7 +30,7 @@
       Formats the value, "val", as U.S. currency.
       
 */
-
+//This event listener will load an anonymous function that will set up the some of the event handlers needed.
 window.addEventListener("load", function () {
       var changingCells = document.querySelectorAll("table#travelExp input.sum");
       for (var i = 0; i < changingCells.length; i++) {
@@ -39,6 +39,7 @@ window.addEventListener("load", function () {
       document.getElementById("submitButton").onclick = validateSummary;
 });
 
+//This function will check if the textarea with the ID summary is empty and if so, notify the user to enter something in.
 function validateSummary() {
       var summary = document.getElementById("summary")
       if (summary.validity.valueMissing) {
@@ -48,6 +49,7 @@ function validateSummary() {
       }
 }
 
+//This function will get the sum of the values in the sumClass class.
 function calcClass(sumClass) {
       var sumFields = document.getElementsByClassName(sumClass);
       var sumTotal = 0;
@@ -61,6 +63,7 @@ function calcClass(sumClass) {
       return sumTotal;
 }
 
+//This function will add up the rows and columns and make the numbers show in US currency.
 function calcExp() {
       var expTable = document.querySelectorAll("table#travelExp tbody tr");
       for (var i = 0; i < expTable.length; i++) {
